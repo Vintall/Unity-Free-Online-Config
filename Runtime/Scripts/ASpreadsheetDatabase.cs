@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using Models;
 using UnityEngine;
 
-
-public abstract class AVufocDatabase<T> : ALoadableVufocDatabase where T : ASpreadsheetDataVo
+public abstract class ASpreadsheetDatabase<T> : ALoadableVufocDatabase where T : ASpreadsheetVo
 {
     [SerializeField] protected List<SpreadsheetVo<T>> spreadsheetEntries;
 
-    protected abstract ASpreadsheetDataVo TemplateVo { get; }
+    protected abstract ASpreadsheetVo TemplateVo { get; }
 
     protected override void OnDatabaseDataLoaded(string loadedData)
     {

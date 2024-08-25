@@ -4,7 +4,7 @@ using Models;
 namespace Samples.Scripts
 {
     [Serializable]
-    public class ExampleSpreadsheetVo : ASpreadsheetDataVo
+    public class ExampleSpreadsheetVo : ASpreadsheetVo
     {
         public string String;
         public int Int;

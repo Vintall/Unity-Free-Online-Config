@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Models
 {
     [Serializable]
-    public class SpreadsheetVo<T> where T : ASpreadsheetDataVo
+    public class SpreadsheetVo<T> where T : ASpreadsheetVo
     {
         [SerializeField] private T configData;
         //[SerializeField] private T configFallback;
@@ -12,9 +12,9 @@ namespace Models
         public T ConfigData => configData;
         //public T ConfigFallback => configFallback;
 
-        public void InitializeData(ASpreadsheetDataVo configData/*, ASpreadsheetDataVo configFallback*/)
+        public void InitializeData(ASpreadsheetVo config/*, ASpreadsheetDataVo configFallback*/)
         {
-            this.configData = (T)configData;
+            this.configData = (T)config;
             //this.configFallback = (T)configFallback;
         }
     }

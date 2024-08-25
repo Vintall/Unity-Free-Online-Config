@@ -3,7 +3,7 @@
 namespace Models
 {
     [Serializable]
-    public abstract class ASpreadsheetDataVo
+    public abstract class ASpreadsheetVo
     {
     
     }
