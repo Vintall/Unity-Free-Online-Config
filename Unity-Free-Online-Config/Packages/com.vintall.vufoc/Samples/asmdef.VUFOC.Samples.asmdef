@@ -1,0 +1,16 @@
+{
+    "name": "asmdef.SpreadsheetConfig.Samples",
+    "rootNamespace": "",
+    "references": [
+        "GUID:8f8784c1a8e48194a9d40e09e2fe34ca"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
