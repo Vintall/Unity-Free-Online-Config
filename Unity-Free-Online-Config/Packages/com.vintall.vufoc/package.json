@@ -1,0 +1,11 @@
+{
+	"name" : "com.vintall.vufoc",
+	"version" : "0.1.0",
+	"description" : "Use Google Spreadsheets as downloadable config file",
+	"displayName" : "VUFOC",
+	"author" : {
+		"name" : "Vintall",
+		"email" : "tarantul4884@gmail.com",
+		"url" : "https://vintall.github.io/"
+	}
+}
