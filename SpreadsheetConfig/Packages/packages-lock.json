@@ -266,8 +266,8 @@
       },
       "url": "https://packages.unity.com"
     },
-    "com.vintall.spreadsheetconfig": {
-      "version": "file:com.vintall.spreadsheetconfig",
+    "com.vintall.vufoc": {
+      "version": "file:com.vintall.vufoc",
       "depth": 0,
       "source": "embedded",
       "dependencies": {}
