@@ -13,9 +13,9 @@ Create as many configs as you like
 5. In the right column pick "Tab-separated values (.tsv)"
 <img style = "float: middle" src="https://github.com/Vintall/Unity-Free-Online-Config/blob/media/Media/Guideline/Guideline4Compressed.png" alt="Guideline4" width="600"/>
 6. In "Published content & settings" you have several fields.
-	- First of all, choose entire document in first field. 
-	- You most likely want to have enabled "Automatically republish when changes are made". Otherwise you will need to republish it manually every time. 
-	- Press "Start publishing" to generate link to your sheet.
+ * First of all, choose entire document in first field. 
+ * You most likely want to have enabled "Automatically republish when changes are made". Otherwise you will need to republish it manually every time. 
+ * Press "Start publishing" to generate link to your sheet.
 <img style = "float: middle" src="https://github.com/Vintall/Unity-Free-Online-Config/blob/media/Media/Guideline/Guideline5Compressed.png" alt="Guideline5" width="600"/>
 7. Copy the link to your sheet.
 <img style = "float: middle" src="https://github.com/Vintall/Unity-Free-Online-Config/blob/media/Media/Guideline/Guideline6Compressed.png" alt="Guideline6" width="600"/>
