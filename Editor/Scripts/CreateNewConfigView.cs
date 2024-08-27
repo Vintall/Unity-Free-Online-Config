@@ -88,8 +88,6 @@ namespace Unity_Free_Online_Config.Editor.Scripts
             for (var x = 0; x < textureSize; ++x)
             for (var y = 0; y < textureSize; ++y)
             {
-                //if(7 + (i - j) % 8 < 5)
-                //    _backgroundTexture.SetPixel(i, j, new Color(0.21f, 0.225f, 0.225f, 1));
                 if ((textureSize - x + y + textureLineFull - 1) % textureLineFull < textureLine1Width)
                     _backgroundTexture.SetPixel(x, y, textureColor1);
                 else
@@ -99,7 +97,7 @@ namespace Unity_Free_Online_Config.Editor.Scripts
             _backgroundTexture.Apply();
             baseTextureCoordsSize = 10;
             _backgroundTextureCoords = new Rect(0, 0, baseTextureCoordsSize, baseTextureCoordsSize);
-            _windowMinSizeVector = new Vector2(500, 500);
+            _windowMinSizeVector = new Vector2(500, 300);
             _windowMaxSizeVector = new Vector2(500, 3000);
             
             minSize = _windowMinSizeVector;
@@ -182,6 +180,9 @@ namespace Unity_Free_Online_Config.Editor.Scripts
         
         private void OnCreateInput()
         {
+            if (_newConfigName == string.Empty)
+                return;
+            
             var fullPathConfig = _targetPath + $"{_newConfigName}/{_newConfigName}SpreadsheetConfig.cs";
             var fullPathVo = _targetPath + $"{_newConfigName}/{_newConfigName}SpreadsheetVo.cs";
             var propEnum = _fieldsSerializedProperty.GetEnumerator();

@@ -1,6 +1,5 @@
 ﻿using System;
 using Unity_Free_Online_Config.Editor.Enums;
-using UnityEngine.Serialization;
 
 namespace Unity_Free_Online_Config.Editor.Scripts
 {
