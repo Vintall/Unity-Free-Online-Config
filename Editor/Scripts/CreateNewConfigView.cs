@@ -35,11 +35,6 @@ namespace Unity_Free_Online_Config.Editor.Scripts
         public static void  ShowWindow () => 
             GetWindow(typeof(CreateNewConfigView), true, "Create new config", true);
 
-        private void Awake()
-        {
-            InitializeGUIResources();
-        }
-
         private void InitializeGUIResources()
         {
             _headerLabelOptions = new GUILayoutOption[]
@@ -67,8 +62,8 @@ namespace Unity_Free_Online_Config.Editor.Scripts
 
             _buttonOptions = new GUILayoutOption[]
             {
-                GUILayout.Width(100),
-                GUILayout.Height(20)
+                GUILayout.Width(170),
+                GUILayout.Height(25)
             };
             
             _buttonStyle = new GUIStyle(GUI.skin.button)
@@ -78,29 +73,43 @@ namespace Unity_Free_Online_Config.Editor.Scripts
             
             _backgroundTexture = new Texture2D(32, 32);
 
-            for (var i = 0; i < 32; ++i)
-            for (var j = 0; j < 32; ++j)
+            var textureSize = 32;
+            var textureColor1 = new Color(0.22f, 0.22f, 0.22f, 0.25f);
+            var textureColor2 = new Color(0.2f, 0.2f, 0.2f, 0.25f);
+            var textureLine1Width = 5;
+            var textureLine2Width = 3;
+            var textureLineFull = textureLine1Width + textureLine2Width;
+            
+            for (var x = 0; x < textureSize; ++x)
+            for (var y = 0; y < textureSize; ++y)
             {
-                if ((i + j) % 12 <= 6)
-                    _backgroundTexture.SetPixel(i, j, new Color(0.25f, 0.25f, 0.25f, 1));
+                //if(7 + (i - j) % 8 < 5)
+                //    _backgroundTexture.SetPixel(i, j, new Color(0.21f, 0.225f, 0.225f, 1));
+                if ((textureSize - x + y + textureLineFull - 1) % textureLineFull < textureLine1Width)
+                    _backgroundTexture.SetPixel(x, y, textureColor1);
                 else
-                    _backgroundTexture.SetPixel(i, j, new Color(0.2f, 0.2f, 0.2f, 1));
+                    _backgroundTexture.SetPixel(x, y, textureColor2);
             }
             
             _backgroundTexture.Apply();
-            _backgroundTextureCoords = new Rect(0, 0, 40, 40);
-            _windowMinSizeVector = new Vector2(500, 220);
+            _backgroundTextureCoords = new Rect(0, 0, 10, 10);
+            _windowMinSizeVector = new Vector2(500, 500);
             _windowMaxSizeVector = new Vector2(500, 500);
+            
+            minSize = _windowMinSizeVector;
+            maxSize = _windowMaxSizeVector;
         }
 
         private void OnGUI()
         {
             if(_defaultLabelOptions == null || 
-               _defaultLabelStyle == null)
+               _defaultLabelStyle == null ||
+               _backgroundTexture == null)
                 InitializeGUIResources();
-            
-            minSize = _windowMinSizeVector;
-            maxSize = _windowMaxSizeVector;
+
+            EditorGUILayout.BeginHorizontal();
+            EditorGUILayout.Space(10f);
+            EditorGUILayout.BeginVertical();
             
             // Background
             GUI.DrawTextureWithTexCoords(rootVisualElement.contentRect, _backgroundTexture, _backgroundTextureCoords);
@@ -124,7 +133,7 @@ namespace Unity_Free_Online_Config.Editor.Scripts
             EditorGUILayout.BeginHorizontal();
             EditorGUILayout.LabelField(PathURLLabel, _defaultLabelStyle, _defaultLabelOptions);
             //_targetPath = EditorGUILayout.TextField(_targetPath);
-            GUILayout.Box($"Using default path: {_targetPath} for now.");
+            GUILayout.Box($"Using default path: {_targetPath}", GUILayout.ExpandWidth(true));
             EditorGUILayout.EndHorizontal();
 
             _embedNameIntoFile = EditorGUILayout.ToggleLeft("Embed name into file", _embedNameIntoFile, _defaultLabelStyle, _defaultLabelOptions);
@@ -134,10 +143,14 @@ namespace Unity_Free_Online_Config.Editor.Scripts
             EditorGUILayout.BeginHorizontal();
             EditorGUILayout.Space(1, true);
             
-            if (GUILayout.Button(new GUIContent("Create"), _buttonStyle, _buttonOptions)) 
+            if (GUILayout.Button(new GUIContent("Create config files"), _buttonStyle, _buttonOptions)) 
                 OnCreateInput();
             
             EditorGUILayout.Space(1, true);
+            EditorGUILayout.EndHorizontal();
+            
+            EditorGUILayout.EndVertical();
+            EditorGUILayout.Space(10f);
             EditorGUILayout.EndHorizontal();
         }
 
