@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 # [v0.2.0]
 - "Create new config" editor window.
-- Basic code generation
+- Config and VO generation. 4 data types: int, string, float, double
 
 # [v0.1.1]
 - Naming refactor.
