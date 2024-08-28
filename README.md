@@ -66,13 +66,24 @@ Create as many configs as you like
 
 <details>
   <summary>Automatic Config Creation</summary>
+  
 - Go to VUFOC -> Create New Config
+
 <img src="https://github.com/Vintall/Unity-Free-Online-Config/blob/media/Media/Guideline/Compressed/14.png" alt="Guideline6" width="600"><img/>
+
+- In the following window you have two required fields
+	- Config Name, which is used in class names. Be sure to fill it according to C# class naming restrictions
+	- List of fields, which is used for VO creation.
+	
+<img src="https://github.com/Vintall/Unity-Free-Online-Config/blob/media/Media/Guideline/Compressed/15.png" alt="Guideline6" width="600"><img/>
+
+- Optionally, you can embed both name and url info file field. If you choose otherwise, you will need to fill it manually in ScriptableObject inspector.
 
 </details>
   
 <details>
   <summary>Manual Config Creation</summary>
+  
 - Create two scripts: ExampleDatabase.cs and ExampleVo.cs
 - ExampleVo extend class ASpreadsheetVo. This is one line of data from your database.
 ```
