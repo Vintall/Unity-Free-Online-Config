@@ -15,15 +15,15 @@ Create as many configs as you like
 - Copy link to package ```https://github.com/Vintall/Unity-Free-Online-Config.git#master```
 - In unity go to **Window** -> **Package Manager**
 
-<img src="https://github.com/Vintall/Unity-Free-Online-Config/blob/media/Media/Guideline/Compressed/7.png" alt="Guideline7" width="600"><img/>
+<img src="https://github.com/Vintall/Unity-Free-Online-Config/blob/media/Media/Guideline/Compressed/07.png" alt="Guideline7" width="600"><img/>
 
 - In the top left corner click **+** -> **Add package from git URL...**
 
-<img src="https://github.com/Vintall/Unity-Free-Online-Config/blob/media/Media/Guideline/Compressed/8.png" alt="Guideline8" width="600"><img/>
+<img src="https://github.com/Vintall/Unity-Free-Online-Config/blob/media/Media/Guideline/Compressed/08.png" alt="Guideline8" width="600"><img/>
 
 - Paste the link to your spreadsheet in field and click **Add**.
 
-<img src="https://github.com/Vintall/Unity-Free-Online-Config/blob/media/Media/Guideline/Compressed/9.png" alt="Guideline9" width="600"><img/>
+<img src="https://github.com/Vintall/Unity-Free-Online-Config/blob/media/Media/Guideline/Compressed/09.png" alt="Guideline9" width="600"><img/>
 
 ## Install via Unity Package
 
@@ -37,30 +37,30 @@ Create as many configs as you like
 - Go to https://docs.google.com/spreadsheets. Make sure you're logged into your account
 - Create a blank spreadsheet.
 
-<img src="https://github.com/Vintall/Unity-Free-Online-Config/blob/media/Media/Guideline/Compressed/1.png" alt="Guideline1" width="600"><img/>
+<img src="https://github.com/Vintall/Unity-Free-Online-Config/blob/media/Media/Guideline/Compressed/01.png" alt="Guideline1" width="600"><img/>
 
 - Go to **File** -> **Share** -> **Publish to web**
 
-<img src="https://github.com/Vintall/Unity-Free-Online-Config/blob/media/Media/Guideline/Compressed/2.png" alt="Guideline2" width="600"><img/>
+<img src="https://github.com/Vintall/Unity-Free-Online-Config/blob/media/Media/Guideline/Compressed/02.png" alt="Guideline2" width="600"><img/>
 
 - In "Publish to the web" pop-up in the left column choose a specific sheet that you want to use as your database. Later on you can make as many as you want.
 
-<img src="https://github.com/Vintall/Unity-Free-Online-Config/blob/media/Media/Guideline/Compressed/3.png" alt="Guideline3" width="600"><img/>
+<img src="https://github.com/Vintall/Unity-Free-Online-Config/blob/media/Media/Guideline/Compressed/03.png" alt="Guideline3" width="600"><img/>
 
 - In the right column pick **Tab-separated values (.tsv)**
 
-<img src="https://github.com/Vintall/Unity-Free-Online-Config/blob/media/Media/Guideline/Compressed/4.png" alt="Guideline4" width="600"><img/>
+<img src="https://github.com/Vintall/Unity-Free-Online-Config/blob/media/Media/Guideline/Compressed/04.png" alt="Guideline4" width="600"><img/>
 
 - In "Published content & settings" you have several fields.
 	- First of all, choose entire document in first field. 
 	- You most likely want to have enabled "Automatically republish when changes are made". Otherwise you will need to republish it manually every time. 
 	- Press **Start publishing** to generate link to your sheet.
 
-<img src="https://github.com/Vintall/Unity-Free-Online-Config/blob/media/Media/Guideline/Compressed/5.png" alt="Guideline5" width="600"><img/>
+<img src="https://github.com/Vintall/Unity-Free-Online-Config/blob/media/Media/Guideline/Compressed/05.png" alt="Guideline5" width="600"><img/>
 
 - Copy the link to your sheet.
 
-<img src="https://github.com/Vintall/Unity-Free-Online-Config/blob/media/Media/Guideline/Compressed/6.png" alt="Guideline6" width="600"><img/>
+<img src="https://github.com/Vintall/Unity-Free-Online-Config/blob/media/Media/Guideline/Compressed/06.png" alt="Guideline6" width="600"><img/>
 
 ## Connect to spreadsheet in Unity
 
