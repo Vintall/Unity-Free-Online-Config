@@ -1,7 +1,7 @@
 {
 	"name" : "com.vintall.vufoc",
-	"version" : "0.1.0",
-	"description" : "Use Google Spreadsheets as downloadable config file",
+	"version" : "0.2.0",
+	"description" : "Use Google Spreadsheets as an unlimited downloadable config file",
 	"displayName" : "VUFOC",
 	"author" : {
 		"name" : "Vintall",

@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Models
 {
     [Serializable]
-    public class SpreadsheetVo<T> where T : ASpreadsheetVo
+    public class SpreadsheetConfigVo<T> where T : ASpreadsheetVo
     {
         [SerializeField] private T configData;
         //[SerializeField] private T configFallback;

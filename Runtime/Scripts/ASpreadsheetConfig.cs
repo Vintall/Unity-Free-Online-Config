@@ -1,23 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using Models;
+using Unity_Free_Online_Config.Runtime.Scripts;
 using UnityEngine;
 
-public abstract class ASpreadsheetDatabase<T> : ALoadableVufocDatabase where T : ASpreadsheetVo
+public abstract class ASpreadsheetConfig<T> : ALoadableConfig where T : ASpreadsheetVo
 {
-    [SerializeField] protected List<SpreadsheetVo<T>> spreadsheetEntries;
+    [SerializeField] protected List<SpreadsheetConfigVo<T>> spreadsheetEntries;
 
     protected abstract ASpreadsheetVo TemplateVo { get; }
 
-    protected override void OnDatabaseDataLoaded(string loadedData)
+    protected override void OnConfigDataLoaded(string loadedData)
     {
         var loadedLines = loadedData.Split('\n');
-        spreadsheetEntries = new List<SpreadsheetVo<T>>(loadedLines.Length);
+        spreadsheetEntries = new List<SpreadsheetConfigVo<T>>(loadedLines.Length);
 
         for (var lineI = 0; lineI < loadedLines.Length; ++lineI)
         {
             var line = loadedLines[lineI].Split("\t");
-            var spreadsheetVo = new SpreadsheetVo<T>();
+            var spreadsheetVo = new SpreadsheetConfigVo<T>();
             var spreadsheetDataVo = TemplateVo;
             
             spreadsheetVo.InitializeData(spreadsheetDataVo);
@@ -25,20 +26,6 @@ public abstract class ASpreadsheetDatabase<T> : ALoadableVufocDatabase where T :
             spreadsheetEntries.Add(spreadsheetVo);
         }
     }
-
-    // protected override void OnDatabaseFallbackLoaded(string loadedData)
-    // {
-    //     var loadedLines = loadedData.Split('\n');
-    //     spreadsheetEntries = new List<SpreadsheetVo<T>>(loadedLines.Length);
-    //
-    //     for (var lineI = 0; lineI < loadedLines.Length; ++lineI)
-    //     {
-    //         var line = loadedLines[lineI].Split("\t");
-    //         var spreadsheetDataVo = TemplateVo;
-    //         
-    //         FillEntry(line, (T)spreadsheetDataVo);
-    //     }
-    // }
 
     private void FillEntry(string[] dataLine, T target)
     {
