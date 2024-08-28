@@ -12,7 +12,7 @@ namespace Unity_Free_Online_Config.Editor.Scripts
     {
         private string _newConfigName;
         private string _newConfigUrl;
-        private string _targetPath = "Assets/VUFOC/";
+        private string _targetPath = "Assets/Scripts/Configs/";
         private bool _embedNameIntoFile;
         private bool _embedUrlIntoFile;
         private Texture2D _backgroundTexture;
@@ -29,7 +29,7 @@ namespace Unity_Free_Online_Config.Editor.Scripts
         private GUIStyle _defaultLabelStyle;
         private GUILayoutOption[] _buttonOptions;
         private GUIStyle _buttonStyle;
-        private const string MenuItem = "VOUFO/Create New Config";
+        private const string MenuItem = "VUFOC/Create New Config";
         private const string WindowLabel = "Create new Spreadsheet config";
         private const string ConfigNameLabel = "Config Name";
         private const string SpreadsheetURLLabel = "Spreadsheet URL";
@@ -132,7 +132,7 @@ namespace Unity_Free_Online_Config.Editor.Scripts
             // Name
             //EditorGUILayout.LabelField(WindowLabel, _headerLabelStyle, _headerLabelOptions);
         
-            // Path for generated databases
+            // Path for generated configs
             EditorGUILayout.BeginHorizontal();
             EditorGUILayout.LabelField(PathURLLabel, _defaultLabelStyle, _defaultLabelOptions);
             GUILayout.Box($"Using default path: {_targetPath}", GUILayout.ExpandWidth(true));
@@ -232,27 +232,34 @@ public class {_newConfigName}SpreadsheetVo : ASpreadsheetVo
 {stringBuilder}
 }}"
             });
-
-            var urlProperty = _embedUrlIntoFile
-                ? $"\tpublic override string DatabaseDataUrl => \"{_newConfigUrl}\";"
-                : "\tpublic override string DatabaseDataUrl => databaseDataUrl;";
+            
+            var nameField = _embedUrlIntoFile
+                ? ""
+                : "\n\t[SerializeField] private string configName;";
+            
+            var nameProperty = _embedUrlIntoFile
+                ? $"\tpublic override string ConfigName => \"{_newConfigName}\";"
+                : "\tpublic override string ConfigName => configName;";
 
             var urlField = _embedUrlIntoFile
                 ? ""
-                : "\n\t[SerializeField] private string databaseDataUrl;";
+                : "\n\t[SerializeField] private string configDataUrl;";
             
+            var urlProperty = _embedUrlIntoFile
+                ? $"\tpublic override string ConfigDataUrl => \"{_newConfigUrl}\";"
+                : "\tpublic override string ConfigDataUrl => configDataUrl;";
+
             File.WriteAllLines(fullPathConfig, new string[]
             {
 $@"using UnityEngine;
 using Models;
 // Auto-generated file
-[CreateAssetMenu(fileName = ""{_newConfigName}"", menuName = ""Databases/{_newConfigName}"")]
-public class {_newConfigName}SpreadsheetDatabase : ASpreadsheetDatabase<{_newConfigName}SpreadsheetVo>
-{{
-    [SerializeField] private string databaseName;{urlField}
+[CreateAssetMenu(fileName = ""{_newConfigName}"", menuName = ""Configs/{_newConfigName}"")]
+public class {_newConfigName}SpreadsheetConfig : ASpreadsheetConfig<{_newConfigName}SpreadsheetVo>
+{{{nameField}{urlField}
     
-    public override string DatabaseName => databaseName;
-    {urlProperty}
+{nameProperty}
+{urlProperty}
     protected override ASpreadsheetVo TemplateVo => new {_newConfigName}SpreadsheetVo();
 }}"
             });

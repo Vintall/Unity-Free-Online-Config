@@ -1,9 +1,9 @@
 using System;
 using System.Net;
 
-namespace Extensions
+namespace Unity_Free_Online_Config.Runtime.Scripts.Extensions
 {
-    public static class VufocExtensions
+    public static class SpreadsheetExtensions
     {
         public static string LoadSpreadsheet(string url)
         {
@@ -16,8 +16,8 @@ namespace Extensions
         public static void LoadSpreadsheetAsync(string url, Action<string> callback)
         {
             var client = new WebClient();
-            client.DownloadStringTaskAsync(url);
             
+            client.DownloadStringTaskAsync(url);
             client.DownloadStringCompleted += (sender, args) =>
             {
                 var results = args.Result;
