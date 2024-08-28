@@ -99,7 +99,7 @@ public class ExampleVo : ASpreadsheetVo
 - ExampleDatabase is a class, that holds database name, url and list of ExampleVo's. Every database have a ScriptableObject, as base class. So, for every database we need to specity attribute [CreateAssetMenu]. You can read more about ScriptableObjects in official unity documentation https://docs.unity3d.com/Manual/class-ScriptableObject.html.
 ```
 [CreateAssetMenu(fileName = "ExampleDatabase", menuName = "Databases/ExampleDatabase")]
-public class ExampleDatabase : ASpreadsheetDatabase<ExampleVo>
+public class ExampleDatabase : ASpreadsheetConfig<ExampleVo>
 {
     [SerializeField] private string databaseName;
     [SerializeField] private string databaseDataUrl;
