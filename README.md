@@ -77,7 +77,7 @@ Create as many configs as you like
 	
 <img src="https://github.com/Vintall/Unity-Free-Online-Config/blob/media/Media/Guideline/Compressed/15.png" alt="Guideline6" width="600"><img/>
 
-- Optionally, you can embed both name and url info file field. If you choose otherwise, you will need to fill it manually in ScriptableObject inspector.
+*Optionally, you can embed both name and url info file field. If you choose otherwise, you will need to fill it manually in ScriptableObject inspector.
 
 </details>
   
@@ -109,22 +109,21 @@ public class ExampleDatabase : ASpreadsheetDatabase<ExampleVo>
     protected override ASpreadsheetVo TemplateVo => new ExampleVo();
 }
 ```
-</details>
-- In editor right click onto project window -> Create -> Databases -> ExampleDatabase. That will create a ScriptableObject of your database
 
-<img src="https://github.com/Vintall/Unity-Free-Online-Config/blob/media/Media/Guideline/Compressed/10.png" alt="Guideline10" width="600"><img/>
+</details>
+
+- In editor right click onto project window -> Create -> Configs -> ExampleConfig. That will create a ScriptableObject of your config
+
+<img src="https://github.com/Vintall/Unity-Free-Online-Config/blob/media/Media/Guideline/Compressed/16.png" alt="Guideline6" width="600"><img/>
 
 - Go to your spreadsheet and fill up some data. Columns shoud be corresponding in format an order. In our case ExampleVo has the folowing fields: "string", "int", "float", "double". So, the column will be read as "A":"string", "B":"int", "C":"float", "D":"double".
 
 <img src="https://github.com/Vintall/Unity-Free-Online-Config/blob/media/Media/Guideline/Compressed/11.png" alt="Guideline11" width="600"><img/>
 
-- Go back to editor. And place database name (optional) and url to your shared sheet. Then click *Download*
+- Go back to editor. And place config name (optional) and url. Then click *Download*
 
 <img src="https://github.com/Vintall/Unity-Free-Online-Config/blob/media/Media/Guideline/Compressed/12.png" alt="Guideline12" width="600"><img/>
 
 - Data from spreadsheet should appear in *SpreadsheetEntries* list.
 
 <img src="https://github.com/Vintall/Unity-Free-Online-Config/blob/media/Media/Guideline/Compressed/13.png" alt="Guideline13" width="600"><img/>
-
-
-
